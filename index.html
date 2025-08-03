@@ -392,29 +392,44 @@
   <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; gap: 0; align-items: stretch; position: relative; z-index: 2;">
 
     <!-- Combined Container: Image + Form -->
-    <div style="display: flex; flex: 1 1 100%; position: relative; overflow: hidden; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); background: rgba(0, 45, 58, 0.4);">
-      <div style="flex: 1; clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%); position: relative;">
+    <div style="display: flex; flex-direction: row; flex-wrap: wrap; width: 100%; overflow: hidden; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); background: rgba(0, 45, 58, 0.4);">
+
+      <!-- Left: Image Side -->
+      <div style="flex: 1 1 400px; min-height: 300px; clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%); position: relative;">
         <img src="https://img.freepik.com/free-photo/young-people-coworking-with-gadgets_1303-11951.jpg" alt="Mentorship" style="width: 100%; height: 100%; object-fit: cover;">
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom right, rgba(0,0,0,0.3), rgba(0,0,0,0.5)); z-index: 1;"></div>
       </div>
+
       <!-- Right: Form Side -->
-      <div style="flex: 1; clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%); background: rgba(255,255,255,0.08); padding: 35px; position: relative; z-index: 2;">
+      <div style="flex: 1 1 500px; clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%); background: rgba(255,255,255,0.08); padding: 35px; position: relative; z-index: 2;">
         <span style="display: inline-block; background: #00bfa6; color: white; padding: 8px 20px; border-radius: 25px; font-weight: 600; font-size: 14px; margin-bottom: 25px; letter-spacing: 1px;">📘 Course Inquiry</span>
         <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 15px; color: white;">Find Your Best Course With Us</h2>
         <p style="font-size: 16px; color: #cde1e7; margin-bottom: 30px; line-height: 1.6;">
           Not sure which course or university is right for you? JK Consultancy provides expert assistance to help you make the best choice.
         </p>
-          <form action="https://jk-consultancy-backend.onrender.com/api/form" method="POST" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
-          <input type="text" placeholder="📖 Course Name" required style="padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
-          <input type="email" placeholder="📧 Email Address" required style="padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
-          <input type="text" placeholder="🌍 Your Country" required style="padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
-          <input type="text" placeholder="📞 Contact Number" required style="padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
+        <form action="https://jk-consultancy-backend.onrender.com/api/form" method="POST" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+          <input type="text" name="course" placeholder="📖 Course Name" required style="padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
+          <input type="email" name="email" placeholder="📧 Email Address" required style="padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
+          <input type="text" name="country" placeholder="🌍 Country" required style="padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
+          <input type="text" name="state" placeholder="🏙️ State/Province" required style="padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
+          <input type="text" name="city" placeholder="🏘️ City" required style="padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
+          <input type="text" name="address" placeholder="🏠 Full Home Address" required style="grid-column: span 2; padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
+          <input type="text" name="phone" placeholder="📞 Contact Number" required style="padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
+          <select name="gender" required style="padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+          <textarea name="message" placeholder="📝 Additional Information or Questions" rows="3" style="grid-column: span 2; padding: 14px 18px; border: none; border-radius: 20px; background: white; color: #003040; font-size: 15px;"></textarea>
           <button type="submit" style="grid-column: span 2; padding: 14px 26px; border: none; border-radius: 30px; background: #00bfa6; color: white; font-weight: 700; font-size: 16px; cursor: pointer; box-shadow: 0 4px 10px rgba(0, 191, 166, 0.3);">🚀 Submit Inquiry</button>
         </form>
       </div>
+
     </div>
   </div>
 </section>
+
 <!-- Redesigned: Popular Course Categories Section (Google Style) -->
 <section style="background: rgba(249, 250, 251, 0.6); padding: 100px 20px; text-align: center; backdrop-filter: blur(3px);" id="course-categories" data-aos="fade-up">
   <div style="max-width: 1200px; margin: auto;">
@@ -579,4 +594,5 @@
   </script>
 </body>
 </html>
+
 
