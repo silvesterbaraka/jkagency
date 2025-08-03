@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <title>JK Consultancy - Desh Bhagat University</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -207,7 +209,27 @@
   </style>
 </head>
 <body>
-  <!-- Navigation -->
+ <nav data-aos="fade-down">
+  <h1>JK Consultancy</h1>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#services">Services</a>
+    <a href="health.html">Health</a>
+    <a href="education.html">Education</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+    <a href="apply.html">Apply</a>
+  </div>
+  <div class="social-icons">
+    <a href="https://wa.me/919999999999" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+</nav>
+
+   <!-- Navigation -->
   <nav>
     <h1>JK Consultancy</h1>
     <div class="nav-links">
@@ -350,34 +372,54 @@
   </div>
 </section>
 
-<!-- Redesigned: Course Inquiry CTA Section -->
-<section style="background: #003040; padding: 80px 20px; color: white;" data-aos="fade-up">
-  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
-    <!-- Image Section -->
-    <div style="flex: 1 1 500px;" data-aos="fade-right">
-      <img src="https://img.freepik.com/free-photo/young-people-coworking-with-gadgets_1291073.jpg?w=2000" alt="Mentorship" style="width: 100%; height: auto; object-fit: cover; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.2);">
-    </div>
 
-    <!-- Form + Text Section -->
-    <div style="flex: 1 1 600px;" data-aos="fade-left">
-      <div style="background: rgba(255, 255, 255, 0.06); padding: 20px 30px; border-radius: 12px;">
-        <span style="display: inline-block; background: #00bfa6; color: white; padding: 6px 16px; border-radius: 25px; font-weight: 600; font-size: 14px; margin-bottom: 20px;">Course Inquiry</span>
-        <h2 style="font-size: 30px; font-weight: 700; margin-bottom: 10px; color: white;">Find Your Best Course With Us</h2>
-        <p style="font-size: 16px; color: #cde1e7; margin-bottom: 25px;">
+<!-- Hero Video Modal (Hidden by default) -->
+<div id="heroVideoModal" style="display: none; justify-content: center; align-items: center; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.8); z-index: 9999;">
+  <div style="position: relative; width: 90%; max-width: 800px;">
+    <iframe width="100%" height="450" src="https://www.youtube.com/embed/0r3_ZO8g7J8?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <button onclick="document.getElementById('heroVideoModal').style.display='none'" style="position: absolute; top: -10px; right: -10px; background: #00bfa6; border: none; color: white; font-size: 18px; border-radius: 50%; width: 32px; height: 32px; cursor: pointer;">&times;</button>
+  </div>
+</div>
+
+<script>
+  function openDemoModal() {
+    document.getElementById('heroVideoModal').style.display = 'flex';
+  }
+</script>
+
+
+<!-- Unified: Course Inquiry CTA Section with Split Vertical Diagonal Box Effect -->
+<section style="background: rgba(0, 48, 64, 0.5); padding: 80px 20px; color: white; position: relative; z-index: 1; backdrop-filter: blur(8px); scroll-behavior: smooth;" data-aos="fade-up">
+  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; gap: 0; align-items: stretch; position: relative; z-index: 2;">
+
+    <!-- Combined Container: Image + Form -->
+    <div style="display: flex; flex: 1 1 100%; position: relative; overflow: hidden; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); background: rgba(0, 45, 58, 0.4);">
+
+      <!-- Left: Image Side -->
+      <div style="flex: 1; clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%); position: relative;">
+        <img src="https://img.freepik.com/free-photo/young-people-coworking-with-gadgets_1303-11951.jpg" alt="Mentorship" style="width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom right, rgba(0,0,0,0.3), rgba(0,0,0,0.5)); z-index: 1;"></div>
+      </div>
+
+      <!-- Right: Form Side -->
+      <div style="flex: 1; clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%); background: rgba(255,255,255,0.08); padding: 35px; position: relative; z-index: 2;">
+        <span style="display: inline-block; background: #00bfa6; color: white; padding: 8px 20px; border-radius: 25px; font-weight: 600; font-size: 14px; margin-bottom: 25px; letter-spacing: 1px;">📘 Course Inquiry</span>
+        <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 15px; color: white;">Find Your Best Course With Us</h2>
+        <p style="font-size: 16px; color: #cde1e7; margin-bottom: 30px; line-height: 1.6;">
           Not sure which course or university is right for you? JK Consultancy provides expert assistance to help you make the best choice.
         </p>
-        <form action="#" method="POST" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-          <input type="text" placeholder="Course Name" required style="padding: 12px 16px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 14px;">
-          <input type="email" placeholder="Email Address" required style="padding: 12px 16px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 14px;">
-          <input type="text" placeholder="Your Country" required style="padding: 12px 16px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 14px;">
-          <input type="text" placeholder="Your Contact Number" required style="padding: 12px 16px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 14px;">
-          <button type="submit" style="grid-column: span 2; padding: 12px 24px; border: none; border-radius: 30px; background: #00bfa6; color: white; font-weight: 600; font-size: 16px; cursor: pointer;">Submit Inquiry</button>
+        <form action="#" method="POST" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+          <input type="text" placeholder="📖 Course Name" required style="padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
+          <input type="email" placeholder="📧 Email Address" required style="padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
+          <input type="text" placeholder="🌍 Your Country" required style="padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
+          <input type="text" placeholder="📞 Contact Number" required style="padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
+          <button type="submit" style="grid-column: span 2; padding: 14px 26px; border: none; border-radius: 30px; background: #00bfa6; color: white; font-weight: 700; font-size: 16px; cursor: pointer; box-shadow: 0 4px 10px rgba(0, 191, 166, 0.3);">🚀 Submit Inquiry</button>
         </form>
       </div>
+
     </div>
   </div>
 </section>
-
 
 <!-- Redesigned: Popular Course Categories Section (Google Style) -->
 <section style="background: rgba(249, 250, 251, 0.6); padding: 100px 20px; text-align: center; backdrop-filter: blur(3px);" id="course-categories" data-aos="fade-up">
@@ -443,32 +485,87 @@
 </section>
 
 <!-- Medical Services Highlights Section -->
-<section style="background: rgba(255, 255, 255, 0.8); padding: 80px 20px;" data-aos="fade-up" id="medical-services">
+<section id="medical-services" data-aos="fade-up" style="background: rgba(255, 255, 255, 0.8); padding: 80px 20px;">
   <div style="max-width: 1100px; margin: auto;">
-    <div style="text-align: center; margin-bottom: 50px;">
+    <div data-aos="fade-down" style="text-align: center; margin-bottom: 50px;">
       <h2 style="font-size: 34px; color: #003566; font-weight: 800;">Our Medical Services</h2>
-      <p style="font-size: 16px; color: #333; max-width: 700px; margin: 10px auto 0;">We offer a wide range of professional medical services in India to address diverse client health needs.</p>
+      <p style="font-size: 16px; color: #333; max-width: 700px; margin: 10px auto 0;">
+        We offer a wide range of professional medical services in India to address diverse client health needs.
+      </p>
     </div>
 
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
-      <div style="flex: 1 1 300px; background: #ffffff; border-radius: 16px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+      <div data-aos="fade-right" style="flex: 1 1 300px; background: #ffffff; border-radius: 16px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center;">
+        <img src="https://cdn-icons-png.flaticon.com/512/2910/2910791.png" alt="Specialist Icon" style="width: 50px; height: 50px; margin-bottom: 15px;">
         <span style="font-size: 24px; color: #00bfa6; font-weight: 700;">01</span>
         <h3 style="margin-top: 10px; color: #003566;">Specialist Consultations</h3>
-        <p style="font-size: 14px; color: #555;">Access leading specialists in oncology, cardiology, orthopedics, neurology, and more across India’s top hospitals.</p>
+        <p style="font-size: 14px; color: #555;">
+          Access leading specialists in oncology, cardiology, orthopedics, neurology, and more across India’s top hospitals.
+        </p>
       </div>
-      <div style="flex: 1 1 300px; background: #ffffff; border-radius: 16px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+
+      <div data-aos="fade-up" style="flex: 1 1 300px; background: #ffffff; border-radius: 16px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center;">
+        <img src="https://cdn-icons-png.flaticon.com/512/411/411763.png" alt="Surgery Icon" style="width: 50px; height: 50px; margin-bottom: 15px;">
         <span style="font-size: 24px; color: #00bfa6; font-weight: 700;">02</span>
         <h3 style="margin-top: 10px; color: #003566;">Advanced Surgeries</h3>
-        <p style="font-size: 14px; color: #555;">Coordinate high-end procedures including organ transplants, cancer treatments, and complex surgeries at accredited facilities.</p>
+        <p style="font-size: 14px; color: #555;">
+          Coordinate high-end procedures including organ transplants, cancer treatments, and complex surgeries at accredited facilities.
+        </p>
       </div>
-      <div style="flex: 1 1 300px; background: #ffffff; border-radius: 16px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+
+      <div data-aos="fade-left" style="flex: 1 1 300px; background: #ffffff; border-radius: 16px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center;">
+        <img src="https://cdn-icons-png.flaticon.com/512/2966/2966485.png" alt="Therapy Icon" style="width: 50px; height: 50px; margin-bottom: 15px;">
         <span style="font-size: 24px; color: #00bfa6; font-weight: 700;">03</span>
         <h3 style="margin-top: 10px; color: #003566;">Rehabilitation & Therapy</h3>
-        <p style="font-size: 14px; color: #555;">We help patients recover with expert physiotherapy, occupational therapy, and long-term care planning.</p>
+        <p style="font-size: 14px; color: #555;">
+          We help patients recover with expert physiotherapy, occupational therapy, and long-term care planning.
+        </p>
       </div>
     </div>
   </div>
 </section>
+<section class="section" id="partnerships" data-aos="fade-up" style="padding: 80px 20px; background: rgba(0, 0, 0, 0.7); text-align: center; color: #f5f5f5; backdrop-filter: blur(6px);">
+  <div style="max-width: 1100px; margin: auto;">
+    <h2 style="font-size: 34px; color: #00bfa6; font-weight: 800; margin-bottom: 20px;">Strategic Partnerships</h2>
+    <p style="font-size: 16px; color: #ccc; max-width: 700px; margin: 0 auto 40px; line-height: 1.7;">
+      We partner with top universities, colleges, and hospitals in India to deliver world-class education and healthcare. These partnerships allow us to provide real-world exposure through internships, research, and expert-led workshops.
+    </p>
+
+    <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; list-style: none; padding: 0; margin: 0;">
+      <li style="background: rgba(255,255,255,0.08); padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-size: 15px; color: #fff; font-weight: 600;" data-aos="fade-up">Curriculum Development & Innovation</li>
+      <li style="background: rgba(255,255,255,0.08); padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-size: 15px; color: #fff; font-weight: 600;" data-aos="fade-up" data-aos-delay="100">Internship & Residency Programs</li>
+      <li style="background: rgba(255,255,255,0.08); padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-size: 15px; color: #fff; font-weight: 600;" data-aos="fade-up" data-aos-delay="200">Joint Research and Workshops</li>
+      <li style="background: rgba(255,255,255,0.08); padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-size: 15px; color: #fff; font-weight: 600;" data-aos="fade-up" data-aos-delay="300">Scholarships & Grants</li>
+    </ul>
+
+    <!-- Moving Logos Row -->
+    <div style="overflow: hidden; margin-top: 60px;">
+      <div style="display: flex; gap: 40px; animation: slideLeft 30s linear infinite; align-items: center;">
+        <img src="https://upload.wikimedia.org/wikipedia/en/7/7b/Manipal_University_Logo.png" alt="Manipal" style="height: 50px; filter: brightness(0) invert(1);">
+        <img src="https://upload.wikimedia.org/wikipedia/en/1/15/Amrita_University_Logo.png" alt="Amrita" style="height: 50px; filter: brightness(0) invert(1);">
+        <img src="https://upload.wikimedia.org/wikipedia/en/2/2f/JSS_Academy_of_Higher_Education_and_Research_logo.png" alt="JSS" style="height: 50px; filter: brightness(0) invert(1);">
+        <img src="https://upload.wikimedia.org/wikipedia/en/9/97/SRM_University_logo.png" alt="SRM" style="height: 50px; filter: brightness(0) invert(1);">
+        <img src="https://upload.wikimedia.org/wikipedia/en/c/ce/AIIMS_New_Delhi_Logo.png" alt="AIIMS" style="height: 50px; filter: brightness(0) invert(1);">
+        <img src="https://upload.wikimedia.org/wikipedia/en/8/84/Christian_Medical_College%2C_Vellore_logo.png" alt="CMC" style="height: 50px; filter: brightness(0) invert(1);">
+        <img src="https://upload.wikimedia.org/wikipedia/en/6/62/Apollo_Hospitals_Logo.svg" alt="Apollo" style="height: 50px; filter: brightness(0) invert(1);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+@keyframes slideLeft {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+</style>
+
+<style>
+@keyframes slideLeft {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+</style>
 
 
   <!-- WhatsApp Button -->
@@ -479,6 +576,12 @@
   <!-- AOS Script -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init({ duration: 1000, once: true });</script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
 </body>
-
 </html>
