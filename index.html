@@ -386,36 +386,45 @@
   }
 </script>
 
+<!-- JK Consultancy Inquiry Section -->
+<section style="background: #003040; padding: 80px 20px; color: white;" data-aos="fade-up">
+  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+    <!-- Image Section -->
+    <div style="flex: 1 1 500px;" data-aos="fade-right">
+      <img src="https://img.freepik.com/free-photo/young-people-coworking-with-gadgets_1291073.jpg?w=2000" alt="Consultancy" style="width: 100%; height: auto; object-fit: cover; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.2);">
+    </div>
 
-<!-- Unified: Course Inquiry CTA Section with Split Vertical Diagonal Box Effect -->
-<section style="background: rgba(0, 48, 64, 0.5); padding: 80px 20px; color: white; position: relative; z-index: 1; backdrop-filter: blur(8px); scroll-behavior: smooth;" data-aos="fade-up">
-  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; gap: 0; align-items: stretch; position: relative; z-index: 2;">
-
-    <!-- Combined Container: Image + Form -->
-    <div style="display: flex; flex-direction: row; flex-wrap: wrap; width: 100%; overflow: hidden; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); background: rgba(0, 45, 58, 0.4);">
-
-      <!-- Left: Image Side -->
-      <div style="flex: 1 1 400px; min-height: 300px; clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%); position: relative;">
-        <img src="https://img.freepik.com/free-photo/young-people-coworking-with-gadgets_1303-11951.jpg" alt="Mentorship" style="width: 100%; height: 100%; object-fit: cover;">
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom right, rgba(0,0,0,0.3), rgba(0,0,0,0.5)); z-index: 1;"></div>
-      </div>
-
-      <!-- Right: Form Side -->
-      <div style="flex: 1 1 500px; clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%); background: rgba(255,255,255,0.08); padding: 35px; position: relative; z-index: 2;">
-        <span style="display: inline-block; background: #00bfa6; color: white; padding: 8px 20px; border-radius: 25px; font-weight: 600; font-size: 14px; margin-bottom: 25px; letter-spacing: 1px;">📘 Course Inquiry</span>
-        <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 15px; color: white;">Find Your Best Course With Us</h2>
-        <p style="font-size: 16px; color: #cde1e7; margin-bottom: 30px; line-height: 1.6;">
-          Not sure which course or university is right for you? JK Consultancy provides expert assistance to help you make the best choice.
+    <!-- Form Section -->
+    <div style="flex: 1 1 600px;" data-aos="fade-left">
+      <div style="background: rgba(255, 255, 255, 0.06); padding: 20px 30px; border-radius: 12px;">
+        <span style="display: inline-block; background: #00bfa6; color: white; padding: 6px 16px; border-radius: 25px; font-weight: 600; font-size: 14px; margin-bottom: 20px;">Inquiry Form</span>
+        <h2 style="font-size: 30px; font-weight: 700; margin-bottom: 10px; color: white;">Let Us Guide Your Next Step</h2>
+        <p style="font-size: 16px; color: #cde1e7; margin-bottom: 25px;">
+          Whether you're looking for the best university or trusted medical treatment in India, JK Consultancy is here to support you.
         </p>
-        <form action="https://jk-consultancy-backend.onrender.com/api/form" method="POST" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
-          <input type="text" name="course" placeholder="📖 Course Name" required style="padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
-          <input type="email" name="email" placeholder="📧 Email Address" required style="padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
-          <input type="text" name="country" placeholder="🌍 Country" required style="padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
-          <input type="text" name="state" placeholder="🏙️ State/Province" required style="padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
-          <input type="text" name="city" placeholder="🏘️ City" required style="padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
-          <input type="text" name="address" placeholder="🏠 Full Home Address" required style="grid-column: span 2; padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
-          <input type="text" name="phone" placeholder="📞 Contact Number" required style="padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
-          <select name="gender" required style="padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
+        <form id="inquiryForm" method="POST" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+          <input type="text" name="fullName" placeholder="Full Name" required style="padding: 12px 16px; border: none; border-radius: 30px;">
+          <input type="email" name="email" placeholder="Email Address" required style="padding: 12px 16px; border: none; border-radius: 30px;">
+          <input type="text" name="country" placeholder="Your Country" required style="padding: 12px 16px; border: none; border-radius: 30px;">
+          <input type="text" name="phone" placeholder="Contact Number" required style="padding: 12px 16px; border: none; border-radius: 30px;">
+          
+          <select name="serviceType" required style="padding: 12px 16px; border: none; border-radius: 30px; background: white; color: #003040;">
+            <option value="">Select Service Type</option>
+            <option value="education">Education Consultancy</option>
+            <option value="medical">Medical Consultancy</option>
+          </select>
+
+          <input type="text" name="subjectOfInterest" placeholder="Course / Treatment Required" required style="padding: 12px 16px; border: none; border-radius: 30px;">
+
+          <textarea name="additionalInfo" placeholder="Describe your situation, condition, or preferences..." rows="4" style="grid-column: span 2; padding: 12px 16px; border: none; border-radius: 20px;"></textarea>
+
+          <button type="submit" style="grid-column: span 2; padding: 12px 24px; border: none; border-radius: 30px; background: #00bfa6; color: white; font-weight: 600; font-size: 16px; cursor: pointer;">Submit Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+ <select name="gender" required style="padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
             <option value="">Select Gender</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
@@ -594,5 +603,6 @@
   </script>
 </body>
 </html>
+
 
 
