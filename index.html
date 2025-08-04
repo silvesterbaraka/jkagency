@@ -424,20 +424,6 @@
     </div>
   </div>
 </section>
- <select name="gender" required style="padding: 14px 18px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 15px;">
-            <option value="">Select Gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
-          </select>
-          <textarea name="message" placeholder="📝 Additional Information or Questions" rows="3" style="grid-column: span 2; padding: 14px 18px; border: none; border-radius: 20px; background: white; color: #003040; font-size: 15px;"></textarea>
-          <button type="submit" style="grid-column: span 2; padding: 14px 26px; border: none; border-radius: 30px; background: #00bfa6; color: white; font-weight: 700; font-size: 16px; cursor: pointer; box-shadow: 0 4px 10px rgba(0, 191, 166, 0.3);">🚀 Submit Inquiry</button>
-        </form>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- Redesigned: Popular Course Categories Section (Google Style) -->
 <section style="background: rgba(249, 250, 251, 0.6); padding: 100px 20px; text-align: center; backdrop-filter: blur(3px);" id="course-categories" data-aos="fade-up">
@@ -591,18 +577,15 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- AOS Script -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ duration: 1000, once: true });</script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-  </script>
-  <script>
-  document.querySelector('form').addEventListener('submit', async function(e) {
+ <!-- AOS Library -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
+
+<!-- Form Submission Script -->
+<script>
+  document.querySelector('form').addEventListener('submit', async function (e) {
     e.preventDefault();
 
     const data = {
@@ -610,7 +593,7 @@
       email: document.querySelector('input[placeholder="Email Address"]').value,
       country: document.querySelector('input[placeholder="Your Country"]').value,
       contactNumber: document.querySelector('input[placeholder="Your Contact Number"]').value,
-      // Add more fields here if you added in frontend
+      // Add more fields here if you have added them to your form
     };
 
     try {
@@ -623,35 +606,8 @@
       const result = await response.json();
       alert(result.message);
     } catch (error) {
-      alert('Submission failed');
-      console.error(error);
-    }
-  });
-</script>
-  <script>
-  document.querySelector('form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-
-    const data = {
-      courseName: document.querySelector('input[placeholder="Course Name"]').value,
-      email: document.querySelector('input[placeholder="Email Address"]').value,
-      country: document.querySelector('input[placeholder="Your Country"]').value,
-      contactNumber: document.querySelector('input[placeholder="Your Contact Number"]').value,
-      // Add more fields if added in the form
-    };
-
-    try {
-      const response = await fetch('http://localhost:3000/submit-inquiry', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
-
-      const result = await response.json();
-      alert(result.message); // ✅ shows confirmation
-    } catch (error) {
-      alert('❌ Submission failed.');
-      console.error(error);
+      alert('❌ Submission failed. Please try again.');
+      console.error('Form submission error:', error);
     }
   });
 </script>
@@ -659,6 +615,7 @@
 
 </body>
 </html>
+
 
 
 
