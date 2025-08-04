@@ -386,39 +386,62 @@
   }
 </script>
 
-<!-- JK Consultancy Inquiry Section -->
+<!-- Inquiry Section -->
 <section style="background: #003040; padding: 80px 20px; color: white;" data-aos="fade-up">
   <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+    
     <!-- Image Section -->
     <div style="flex: 1 1 500px;" data-aos="fade-right">
-      <img src="https://img.freepik.com/free-photo/young-people-coworking-with-gadgets_1291073.jpg?w=2000" alt="Consultancy" style="width: 100%; height: auto; object-fit: cover; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.2);">
+      <img src="https://img.freepik.com/free-photo/young-people-coworking-with-gadgets_1291073.jpg?w=2000"
+        alt="Mentorship"
+        style="width: 100%; height: auto; object-fit: cover; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.2);">
     </div>
 
     <!-- Form Section -->
     <div style="flex: 1 1 600px;" data-aos="fade-left">
       <div style="background: rgba(255, 255, 255, 0.06); padding: 20px 30px; border-radius: 12px;">
-        <span style="display: inline-block; background: #00bfa6; color: white; padding: 6px 16px; border-radius: 25px; font-weight: 600; font-size: 14px; margin-bottom: 20px;">Inquiry Form</span>
-        <h2 style="font-size: 30px; font-weight: 700; margin-bottom: 10px; color: white;">Let Us Guide Your Next Step</h2>
+        <span
+          style="display: inline-block; background: #00bfa6; color: white; padding: 6px 16px; border-radius: 25px; font-weight: 600; font-size: 14px; margin-bottom: 20px;">Course
+          Inquiry</span>
+        <h2 style="font-size: 30px; font-weight: 700; margin-bottom: 10px; color: white;">Find Your Best Course With Us
+        </h2>
         <p style="font-size: 16px; color: #cde1e7; margin-bottom: 25px;">
-          Whether you're looking for the best university or trusted medical treatment in India, JK Consultancy is here to support you.
+          Not sure which course, university, or medical treatment is right for you? JK Consultancy helps you choose
+          wisely.
         </p>
-        <form id="inquiryForm" method="POST" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-          <input type="text" name="fullName" placeholder="Full Name" required style="padding: 12px 16px; border: none; border-radius: 30px;">
-          <input type="email" name="email" placeholder="Email Address" required style="padding: 12px 16px; border: none; border-radius: 30px;">
-          <input type="text" name="country" placeholder="Your Country" required style="padding: 12px 16px; border: none; border-radius: 30px;">
-          <input type="text" name="phone" placeholder="Contact Number" required style="padding: 12px 16px; border: none; border-radius: 30px;">
-          
-          <select name="serviceType" required style="padding: 12px 16px; border: none; border-radius: 30px; background: white; color: #003040;">
+
+        <!-- FORM -->
+        <form id="inquiryForm"
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+
+          <input type="text" name="courseName" placeholder="Course or Treatment Name" required
+            style="padding: 12px 16px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 14px;">
+
+          <input type="email" name="email" placeholder="Email Address" required
+            style="padding: 12px 16px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 14px;">
+
+          <input type="text" name="country" placeholder="Your Country" required
+            style="padding: 12px 16px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 14px;">
+
+          <input type="text" name="contactNumber" placeholder="Contact Number" required
+            style="padding: 12px 16px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 14px;">
+
+          <input type="text" name="fullName" placeholder="Your Full Name" required
+            style="padding: 12px 16px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 14px;">
+
+          <select name="serviceType" required
+            style="padding: 12px 16px; border: none; border-radius: 30px; background: white; color: #003040; font-size: 14px;">
             <option value="">Select Service Type</option>
-            <option value="education">Education Consultancy</option>
-            <option value="medical">Medical Consultancy</option>
+            <option value="Education">Education</option>
+            <option value="Medical">Medical</option>
           </select>
 
-          <input type="text" name="subjectOfInterest" placeholder="Course / Treatment Required" required style="padding: 12px 16px; border: none; border-radius: 30px;">
+          <textarea name="message" rows="3" placeholder="Additional Message"
+            style="padding: 12px 16px; border: none; border-radius: 20px; background: white; color: #003040; font-size: 14px; grid-column: span 2;"></textarea>
 
-          <textarea name="additionalInfo" placeholder="Describe your situation, condition, or preferences..." rows="4" style="grid-column: span 2; padding: 12px 16px; border: none; border-radius: 20px;"></textarea>
-
-          <button type="submit" style="grid-column: span 2; padding: 12px 24px; border: none; border-radius: 30px; background: #00bfa6; color: white; font-weight: 600; font-size: 16px; cursor: pointer;">Submit Inquiry</button>
+          <button type="submit"
+            style="grid-column: span 2; padding: 12px 24px; border: none; border-radius: 30px; background: #00bfa6; color: white; font-weight: 600; font-size: 16px; cursor: pointer;">Submit
+            Inquiry</button>
         </form>
       </div>
     </div>
@@ -577,44 +600,44 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
- <!-- AOS Library -->
+<!-- AOS Animation -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({ duration: 1000, once: true });
 </script>
 
-<!-- Form Submission Script -->
+<!-- JS to handle form submission -->
 <script>
-  document.querySelector('form').addEventListener('submit', async function (e) {
-    e.preventDefault();
+  window.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('inquiryForm');
 
-    const data = {
-      courseName: document.querySelector('input[placeholder="Course Name"]').value,
-      email: document.querySelector('input[placeholder="Email Address"]').value,
-      country: document.querySelector('input[placeholder="Your Country"]').value,
-      contactNumber: document.querySelector('input[placeholder="Your Contact Number"]').value,
-      // Add more fields here if you have added them to your form
-    };
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
 
-    try {
-      const response = await fetch('http://localhost:3000/submit-inquiry', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
 
-      const result = await response.json();
-      alert(result.message);
-    } catch (error) {
-      alert('❌ Submission failed. Please try again.');
-      console.error('Form submission error:', error);
-    }
+      try {
+        const response = await fetch('http://localhost:3000/submit-inquiry', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+        alert(result.message || '✅ Submitted successfully!');
+        form.reset();
+      } catch (error) {
+        alert('❌ Submission failed. Please try again.');
+        console.error(error);
+      }
+    });
   });
 </script>
 
-
 </body>
 </html>
+
 
 
 
