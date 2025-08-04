@@ -601,8 +601,37 @@
       once: true
     });
   </script>
+  <script>
+  document.querySelector('form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const data = {
+      courseName: document.querySelector('input[placeholder="Course Name"]').value,
+      email: document.querySelector('input[placeholder="Email Address"]').value,
+      country: document.querySelector('input[placeholder="Your Country"]').value,
+      contactNumber: document.querySelector('input[placeholder="Your Contact Number"]').value,
+      // Add more fields here if you added in frontend
+    };
+
+    try {
+      const response = await fetch('http://localhost:3000/submit-inquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+      alert(result.message);
+    } catch (error) {
+      alert('Submission failed');
+      console.error(error);
+    }
+  });
+</script>
+
 </body>
 </html>
+
 
 
 
