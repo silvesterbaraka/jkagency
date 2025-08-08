@@ -282,7 +282,94 @@ nav {
   100% { transform: translateX(-100%); }
 }
 
-</style>  
+/* ======================== */
+/* Secure & Reliable Panel */
+/* ======================== */
+.secure-reliable {
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px 25px;
+  margin-left: auto;  /* Aligns the box to the right */
+  margin-right: 30px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeInRight 0.8s ease-in-out;
+  color: #111;
+  text-align: left;
+}
+
+.secure-reliable h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #003566;
+  margin-bottom: 12px;
+}
+
+.secure-reliable p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .secure-reliable {
+    width: 90%;
+    margin: 20px auto;
+    padding: 24px;
+  }
+}
+/* === Hero Layout Fix: Right-align Feature Cards === */
+.hero > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 60px 30px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.hero > div > div:first-child {
+  flex: 1 1 500px;
+  min-width: 300px;
+}
+
+.hero > div > div:last-child {
+  flex: 1 1 500px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: flex-end;
+  min-width: 300px;
+}
+
+/* === Make feature cards responsive on smaller devices === */
+@media (max-width: 991px) {
+  .hero > div {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero > div > div:last-child {
+    justify-content: center;
+  }
+}
+
+</style>
 
 </head>
 <body>
@@ -672,6 +759,7 @@ nav {
   </script>
 </body>
 </html>
+
 
 
 
