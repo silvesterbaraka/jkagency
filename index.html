@@ -338,7 +338,19 @@ nav {
     width: 100vw !important;
   }
 }
+@media (max-width: 768px) {
+  .form-container {
+    flex-direction: column;
+  }
 
+  .form-box {
+    padding: 20px;
+  }
+
+  .form-images {
+    height: 300px;
+  }
+}
 /* Hero Section */
 .hero {
   min-height: 100vh;
@@ -421,19 +433,26 @@ nav {
     transform: translateX(0);
   }
 }
-
 @media (max-width: 768px) {
+  #heroVideoModal iframe {
+    height: 240px;
+  }
   .secure-reliable {
     width: 90%;
     margin: 20px auto;
     padding: 24px;
   }
-
-  .form-section > .form-container {
-    flex-direction: column;
-  }
 }
-
+.form-section > .form-container {
+    flex-direction: column;
+}
+  a:focus, button:focus, .form-input:focus {
+  outline: 2px solid #00bfa6;
+  outline-offset: 2px;
+}
+  :target {
+  scroll-margin-top: 100px;
+}
 /* === Hero Layout Fix: Right-align Feature Cards === */
 .hero > div {
   display: flex;
@@ -450,7 +469,10 @@ nav {
   flex: 1 1 500px;
   min-width: 300px;
 }
-
+.nav-links a.active {
+  color: #00bfa6;
+  font-weight: 600;
+}
 .hero > div > div:last-child {
   flex: 1 1 500px;
   display: grid;
@@ -466,7 +488,13 @@ nav {
     align-items: center;
     text-align: center;
   }
-
+  @media (max-width: 600px) {
+  .hero div > div:first-child a.btn,
+  .hero div > div:first-child button {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
   .hero > div > div:last-child {
     justify-content: center;
   }
@@ -478,7 +506,7 @@ nav {
   <!-- Navbar -->
 <nav>
   <div class="nav-logo">
-    <img src="jk consultancy.jpg" alt="Jk consultancy.jpg">
+   <img src="jk consultancy.jpg" alt="JK Consultancy Logo">
     <span>JK Consultancy</span>
   </div>
   <div class="nav-links" id="navbar-links">
@@ -829,38 +857,35 @@ nav {
   </div>
 </section>
 
-<style>
-@keyframes slideLeft {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-</style>
-
-    <a href="https://wa.me/919999999999" target="_blank" class="whatsapp-float">
-      <i class="fab fa-whatsapp"></i>
-    </a>
-  </main>
- <!-- AOS Script -->
+<!-- AOS Script -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  // Initialize AOS
-  AOS.init({ duration: 1000, once: true });
-
   document.addEventListener('DOMContentLoaded', function () {
-    // Hamburger menu toggle
+    // Initialize AOS
+    AOS.init({ duration: 1000, once: true });
+
+    // Navbar toggle (hamburger menu)
     const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const dropdown = document.querySelector('.dropdown');
-    const dropbtn = document.querySelector('.dropbtn');
+    const navLinks = document.querySelector('.nav-links'); // or use #navbar-links if needed
 
     if (menuToggle && navLinks) {
-      menuToggle.addEventListener('click', function () {
+      menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('show');
+      });
+
+      // Close menu on nav link click (mobile)
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('show');
+        });
       });
     }
 
+    // Dropdown toggle for mobile
+    const dropdown = document.querySelector('.dropdown');
+    const dropbtn = document.querySelector('.dropbtn');
+
     if (dropbtn && dropdown) {
-      // Dropdown toggle for mobile
       dropbtn.addEventListener('click', function (e) {
         if (window.innerWidth <= 900) {
           e.preventDefault();
@@ -868,24 +893,31 @@ nav {
         }
       });
 
-      // Close dropdown if clicked outside
+      // Close dropdown on outside click
       document.addEventListener('click', function (e) {
         if (!e.target.closest('.dropdown')) {
           dropdown.classList.remove('open');
         }
       });
 
-      // Hover behavior for desktop
+      // Desktop hover behavior
       dropdown.addEventListener('mouseenter', function () {
         if (window.innerWidth > 900) dropdown.classList.add('open');
       });
-
       dropdown.addEventListener('mouseleave', function () {
         if (window.innerWidth > 900) dropdown.classList.remove('open');
       });
     }
-
-    // Service field toggle
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        window.scrollTo({ top: target.offsetTop - 60, behavior: 'smooth' });
+      }
+    });
+    // Toggle form fields based on service type
     function toggleServiceFields() {
       const service = document.querySelector('input[name="serviceType"]:checked')?.value;
       const edu = document.getElementById('educationFields');
@@ -893,27 +925,41 @@ nav {
 
       if (!edu || !health) return;
 
-      if (service === 'Education') {
-        edu.style.display = 'block';
-        health.style.display = 'none';
-      } else {
-        edu.style.display = 'none';
-        health.style.display = 'block';
-      }
+      edu.style.display = service === 'Education' ? 'block' : 'none';
+      health.style.display = service === 'Healthcare' ? 'block' : 'none';
     }
 
-    // Run once on load
     toggleServiceFields();
 
-    // Re-run on change
     document.querySelectorAll('input[name="serviceType"]').forEach(radio => {
       radio.addEventListener('change', toggleServiceFields);
     });
+
+    // Active section highlighting in navbar
+    const sections = document.querySelectorAll("section[id]");
+    const navLinksList = document.querySelectorAll(".nav-links a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinksList.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(current)) {
+          link.classList.add("active");
+        }
+      });
+    });
   });
 </script>
-
 </body>
 </html>
+
 
 
 
