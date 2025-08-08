@@ -338,19 +338,7 @@ nav {
     width: 100vw !important;
   }
 }
-@media (max-width: 768px) {
-  .form-container {
-    flex-direction: column;
-  }
 
-  .form-box {
-    padding: 20px;
-  }
-
-  .form-images {
-    height: 300px;
-  }
-}
 /* Hero Section */
 .hero {
   min-height: 100vh;
@@ -433,26 +421,19 @@ nav {
     transform: translateX(0);
   }
 }
+
 @media (max-width: 768px) {
-  #heroVideoModal iframe {
-    height: 240px;
-  }
   .secure-reliable {
     width: 90%;
     margin: 20px auto;
     padding: 24px;
   }
-}
-.form-section > .form-container {
+
+  .form-section > .form-container {
     flex-direction: column;
+  }
 }
-  a:focus, button:focus, .form-input:focus {
-  outline: 2px solid #00bfa6;
-  outline-offset: 2px;
-}
-  :target {
-  scroll-margin-top: 100px;
-}
+
 /* === Hero Layout Fix: Right-align Feature Cards === */
 .hero > div {
   display: flex;
@@ -469,10 +450,7 @@ nav {
   flex: 1 1 500px;
   min-width: 300px;
 }
-.nav-links a.active {
-  color: #00bfa6;
-  font-weight: 600;
-}
+
 .hero > div > div:last-child {
   flex: 1 1 500px;
   display: grid;
@@ -488,24 +466,19 @@ nav {
     align-items: center;
     text-align: center;
   }
-  @media (max-width: 600px) {
-  .hero div > div:first-child a.btn,
-  .hero div > div:first-child button {
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-  }
+
   .hero > div > div:last-child {
     justify-content: center;
   }
 }
 </style>
+
 </head>
 <body>
   <!-- Navbar -->
 <nav>
   <div class="nav-logo">
-   <img src="jk consultancy.jpg" alt="JK Consultancy Logo">
+    <img src="jk consultancy.jpg" alt="Jk consultancy.jpg">
     <span>JK Consultancy</span>
   </div>
   <div class="nav-links" id="navbar-links">
@@ -855,6 +828,7 @@ nav {
     </div>
   </div>
 </section>
+
 <style>
 @keyframes slideLeft {
   0% { transform: translateX(100%); }
@@ -937,49 +911,9 @@ nav {
     });
   });
 </script>
-<script>
-  const sections = document.querySelectorAll("section[id]");
-  const navLinksList = document.querySelectorAll(".nav-links a");
 
-  window.addEventListener("scroll", () => {
-    let current = "";
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 100;
-      if (pageYOffset >= sectionTop) {
-        current = section.getAttribute("id");
-      }
-    });
-
-    navLinksList.forEach((link) => {
-      link.classList.remove("active");
-      if (link.getAttribute("href").includes(current)) {
-        link.classList.add("active");
-      }
-    });
-  });
-</script>
-<script>
-  const menuToggle = document.querySelector(".menu-toggle");
-  const navLinks = document.getElementById("navbar-links");
-
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-  });
-
-  // Close menu on link click (for smoother UX)
-  document.querySelectorAll(".nav-link").forEach(link => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("show");
-    });
-  });
-</script>
 </body>
 </html>
-
-
-
-
-
 
 
 
