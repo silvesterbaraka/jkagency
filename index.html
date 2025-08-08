@@ -631,61 +631,56 @@ nav {
 }
 </style>
 
-<style>
-@keyframes slideLeft {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-</style>
-
-
-  <!-- WhatsApp Button -->
-  <a href="https://wa.me/919999999999" target="_blank" class="whatsapp-float">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-<!-- AOS Animation -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({ duration: 1000, once: true });
-</script>
-
-<!-- JS to handle form submission -->
-<script>
-  window.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('inquiryForm');
-
-    form.addEventListener('submit', async function (e) {
-      e.preventDefault();
-
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData.entries());
-
-      try {
-        const response = await fetch('http://localhost:3000/submit-inquiry', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
-
-        const result = await response.json();
-        alert(result.message || '✅ Submitted successfully!');
-        form.reset();
-      } catch (error) {
-        alert('❌ Submission failed. Please try again.');
-        console.error(error);
-      }
-    });
-  });
+    <a href="https://wa.me/919999999999" target="_blank" class="whatsapp-float">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </main>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000,
-    once: true,
-  });
-</script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+    // Hamburger menu toggle
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      const dropdown = document.querySelector('.dropdown');
+      const dropbtn = document.querySelector('.dropbtn');
+      // Hamburger click
+      menuToggle.addEventListener('click', function () {
+        navLinks.classList.toggle('show');
+      });
+      // Dropdown toggle for mobile
+      dropbtn.addEventListener('click', function (e) {
+        if (window.innerWidth <= 900) {
+          e.preventDefault();
+          dropdown.classList.toggle('open');
+        }
+      });
+      // Close dropdown if clicked outside
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('.dropdown')) {
+          dropdown.classList.remove('open');
+        }
+      });
+      // Dropdown hover for desktop
+      dropdown.addEventListener('mouseenter', function () {
+        if (window.innerWidth > 900) dropdown.classList.add('open');
+      });
+      dropdown.addEventListener('mouseleave', function () {
+        if (window.innerWidth > 900) dropdown.classList.remove('open');
+      });
+    });
+  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 
 
