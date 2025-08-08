@@ -19,8 +19,7 @@
 }
 
 body {
-  background: url('https://imageio.forbes.com/specials-images/imageserve/66267884b1a8f877ec73d246/Female-surgeon-and-her-assistants-operating-on-patient-/0x0.jpg?format=jpg&crop=3430,1930,x0,y8,safe&width=1600') 
-              no-repeat center center fixed;
+  background: url('https://imageio.forbes.com/specials-images/imageserve/66267884b1a8f877ec73d246/Female-surgeon-and-her-assistants-operating-on-patient-/0x0.jpg?format=jpg&crop=3430,1930,x0,y8,safe&width=1600') no-repeat center center fixed;
   background-size: cover;
   color: #1a1a1a;
   width: 100%;
@@ -35,40 +34,23 @@ nav, main, section, .hero {
   margin: 0 auto;
   box-sizing: border-box;
 }
-/* Container Background */
+
+/* Form Section */
 .form-section {
   background: linear-gradient(to right, #f8fcff, #eaf3ff);
   padding: 60px 20px;
 }
-/* Input Fields - Improved visibility */
-.form-input {
-  padding: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
-  width: 100%;
-  box-sizing: border-box;
-  outline: none;
-  font-size: 14px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Add placeholder color */
-.form-input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-/* On focus */
-.form-input:focus {
-  border-color: #fff;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
-}
-
-/* On hover */
-.form-input:hover {
-  border-color: #fff;
-} 
 .form-images {
   flex: 1 1 50%;
   display: flex;
@@ -83,7 +65,6 @@ nav, main, section, .hero {
   object-fit: cover;
 }
 
-/* Form Box with transparent dark background */
 .form-box {
   flex: 1 1 50%;
   padding: 40px;
@@ -105,7 +86,6 @@ nav, main, section, .hero {
   color: #e0e0e0;
 }
 
-/* Radio buttons */
 .service-selection {
   display: flex;
   gap: 20px;
@@ -117,15 +97,28 @@ nav, main, section, .hero {
   color: #fff;
 }
 
-/* Input Fields */
+/* Consolidated form input styling */
 .form-input {
   padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
   color: #fff;
   width: 100%;
   box-sizing: border-box;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-input:focus {
+  border-color: #00bfa6;
+  box-shadow: 0 0 0 2px rgba(0, 191, 166, 0.2);
 }
 
 /* Button */
@@ -385,16 +378,17 @@ nav {
   text-decoration: none;
 }
 
-/* Marquee Animation (fixed typo) */
+/* Marquee Animation */
 @keyframes slideLeft {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
 }
+
 .secure-reliable {
   max-width: 500px;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 30px 25px;
-  margin-left: auto;  /* Aligns the box to the right */
+  margin-left: auto;
   margin-right: 30px;
   margin-top: 40px;
   margin-bottom: 40px;
@@ -434,27 +428,12 @@ nav {
     margin: 20px auto;
     padding: 24px;
   }
-} 
-.form-input {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
-    transition: border 0.2s ease, box-shadow 0.2s ease;
-    font-family: 'Poppins', sans-serif;
-  }
 
-  .form-input:focus {
-    border-color: #00bfa6;
-    box-shadow: 0 0 0 2px rgba(0, 191, 166, 0.2);
-    outline: none;
+  .form-section > .form-container {
+    flex-direction: column;
   }
+}
 
-  @media (max-width: 768px) {
-    section > div {
-      flex-direction: column;
-    }
-  }
 /* === Hero Layout Fix: Right-align Feature Cards === */
 .hero > div {
   display: flex;
@@ -481,7 +460,6 @@ nav {
   min-width: 300px;
 }
 
-/* === Make feature cards responsive on smaller devices === */
 @media (max-width: 991px) {
   .hero > div {
     flex-direction: column;
@@ -493,9 +471,7 @@ nav {
     justify-content: center;
   }
 }
-
 </style>
-
 
 </head>
 <body>
@@ -938,6 +914,7 @@ nav {
 
 </body>
 </html>
+
 
 
 
