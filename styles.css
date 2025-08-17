@@ -11,181 +11,102 @@ body {
   background: url('https://imageio.forbes.com/specials-images/imageserve/66267884b1a8f877ec73d246/Female-surgeon-and-her-assistants-operating-on-patient-/0x0.jpg?format=jpg&crop=3430,1930,x0,y8,safe&width=1600') no-repeat center center fixed;
   background-size: cover;
   color: #1a1a1a;
-  width: 100vw; /* Changed to ensure body fits viewport */
+  width: 100%;
   min-height: 100vh;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden;
 }
 
 /* Container Standardization */
 nav, main, section, .hero {
   width: 100%;
-  max-width: 100vw; /* Changed from 1600px to prevent overflow */
+  max-width: 1600px;
   margin: 0 auto;
   box-sizing: border-box;
-  overflow-x: hidden; /* Added to prevent child elements from overflowing */
 }
 
-/* Form Section - Enhanced with New Colors and Validation Styling */
+/* Form Section - Compact, Modern, Slick Design */
 .form-section {
-  padding: clamp(40px, 7vw, 80px) clamp(10px, 2vw, 20px);
-  background: linear-gradient(135deg, rgba(248, 241, 233, 0.95) 0%, rgba(233, 236, 239, 0.95) 100%); /* Soft ivory gradient */
-  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  padding: 80px 20px; /* Match padding of other sections */
+  background: #f8f9fc; /* Soft modern background */
+  border-radius: 0; /* Remove rounding to blend with other sections */
+  box-shadow: none; /* Remove shadow to match other sections */
   width: 100%;
-  max-width: 100vw;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow-x: hidden; /* Added */
+  max-width: 100vw; /* Full width on all devices */
 }
 
 .form-container {
   display: flex;
-  gap: clamp(1.5rem, 3vw, 2.5rem);
+  gap: 1.5rem;
   flex-wrap: wrap;
-  max-width: 100vw; /* Changed from 1200px */
+  max-width: 1200px; /* Match max-width of other sections */
   margin: 0 auto;
-  padding: 0 clamp(10px, 2vw, 15px);
-  box-sizing: border-box;
 }
 
 .form-images {
   flex: 1;
-  min-width: clamp(220px, 30vw, 280px);
-  max-width: 100%; /* Ensure images don't overflow */
+  min-width: 200px; /* Smaller min-width for compactness */
   display: flex;
   flex-direction: column;
-  gap: clamp(1rem, 2vw, 1.5rem);
-  align-self: center;
+  gap: 1rem;
 }
 
 .form-images img {
   width: 100%;
-  max-height: clamp(160px, 22vw, 320px);
+  height: auto;
+  border-radius: 8px;
   object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Subtle image shadow */
+  transition: transform 0.3s ease; /* Slick hover effect */
 }
 
 .form-images img:hover {
-  transform: scale(1.03) translateY(-6px);
-  box-shadow: 0 10px 24px rgba(255, 111, 97, 0.3); /* Coral shadow */
+  transform: scale(1.02); /* Gentle zoom on hover */
 }
 
 .form-box {
   flex: 1;
-  min-width: clamp(300px, 45vw, 360px);
-  background: rgba(255, 255, 255, 0.95);
-  padding: clamp(1.5rem, 3vw, 2.5rem);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(12px);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+  min-width: 280px; /* Compact min-width */
+  background: #ffffff;
+  padding: 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08); /* Modern card shadow */
+  transition: box-shadow 0.3s ease; /* Slick elevation on hover */
 }
 
 .form-box:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(255, 111, 97, 0.25); /* Coral shadow */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .form-box h2 {
-  font-size: clamp(1.4rem, 3.5vw, 1.8rem);
-  font-weight: 800;
+  font-size: 1.25rem; /* Smaller, professional heading */
+  font-weight: 600;
+  margin-bottom: 0.5rem;
   color: #1a1a1a;
-  margin-bottom: 0.75rem;
-  line-height: 1.2;
-  background: linear-gradient(90deg, #007bff, #ff6f61); /* Teal to coral gradient */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .form-box p {
-  font-size: clamp(0.9rem, 2vw, 1rem);
-  color: #4a4a4a;
-  margin-bottom: clamp(1.2rem, 2.5vw, 1.8rem);
-  line-height: 1.6;
+  font-size: 0.85rem; /* Compact paragraph */
+  color: #555;
+  margin-bottom: 1rem;
 }
 
-/* Form Feedback */
-.form-feedback {
-  margin-top: clamp(1rem, 2vw, 1.5rem);
-  padding: clamp(0.8rem, 2vw, 1rem);
-  border-radius: 8px;
-  font-size: clamp(0.9rem, 2vw, 1rem);
-  text-align: center;
-  opacity: 0;
-  transform: translateY(-10px);
-  animation: fadeInUp 0.3s ease forwards;
-}
-
-.form-feedback.success {
-  background: rgba(0, 123, 255, 0.1); /* Teal background */
-  color: #007bff;
-  border: 1px solid #007bff;
-}
-
-.form-feedback.error {
-  background: rgba(211, 47, 47, 0.1); /* Red background */
-  color: #d32f2f;
-  border: 1px solid #d32f2f;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Service Selection */
 .service-selection {
   display: flex;
-  gap: clamp(1rem, 2vw, 1.5rem);
-  margin-bottom: clamp(1.2rem, 2.5vw, 1.8rem);
-  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
-.service-label {
+.service-selection label {
+  font-size: 0.85rem;
+  color: #333;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  font-size: clamp(0.9rem, 2vw, 1rem);
-  font-weight: 600;
-  color: #333;
+  gap: 0.25rem;
   cursor: pointer;
-  padding: 0.6rem clamp(0.8rem, 2vw, 1.2rem);
-  border-radius: 24px;
-  background: rgba(248, 241, 233, 0.5); /* Soft ivory */
-  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.service-label:hover {
-  background: rgba(255, 111, 97, 0.1); /* Coral hover */
-  transform: scale(1.05);
-}
-
-.service-label input[type="radio"] {
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #007bff; /* Teal border */
-  border-radius: 50%;
-  position: relative;
-  cursor: pointer;
-  transition: border-color 0.3s ease;
-}
-
-.service-label input[type="radio"]:checked::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 12px;
-  height: 12px;
-  background: linear-gradient(135deg, #007bff, #ff6f61); /* Teal to coral */
-  border-radius: 50%;
+.service-selection input[type="radio"] {
+  accent-color: #007bff; /* Modern blue accent */
 }
 
 /* Form Grid */
@@ -449,18 +370,19 @@ button[type="submit"]:focus-visible {
 nav {
   position: fixed;
   top: 0;
-  left: 0; /* Simplified positioning */
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
-  max-width: 100vw; /* Ensure nav fits viewport */
+  max-width: 1600px;
   height: 80px;
-  padding: 0 clamp(10px, 2vw, 20px); /* Adjusted padding */
+  padding: 0 32px;
   background: #003566;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 1000;
-  transform: none; /* Removed translateX */
+  transition: all 0.3s ease;
 }
 
 .nav-logo {
@@ -599,7 +521,7 @@ nav {
     position: fixed;
     top: 80px;
     left: 0;
-    width: 100%; /* Adjusted from 70% */
+    width: 50%;
     height: calc(100vh - 80px);
     background: #003566;
     flex-direction: column;
@@ -662,6 +584,7 @@ nav {
     width: 100vw !important;
   }
 
+  /* Ensure all icons visible */
   .social-icons a {
     display: inline-block !important;
     visibility: visible !important;
@@ -676,12 +599,10 @@ nav {
   justify-content: center;
   align-items: center;
   text-align: left;
-  padding-top: 80px; /* Adjusted for nav */
+  padding-top: 100px;
   position: relative;
   color: #fff;
   background-color: rgba(0, 29, 61, 0.6);
-  width: 100%;
-  overflow-x: hidden;
 }
 
 .hero video {
@@ -689,22 +610,9 @@ nav {
   top: 0;
   left: 0;
   width: 100vw;
-  max-width: 100vw;
   height: 100vh;
   object-fit: cover;
   z-index: -1;
-}
-
-.hero > div {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-  padding: 60px clamp(10px, 2vw, 20px);
-  max-width: 100vw;
-  margin: 0 auto;
-  box-sizing: border-box;
 }
 
 /* WhatsApp Floating Button */
@@ -724,8 +632,8 @@ nav {
 
 /* Marquee Animation */
 @keyframes slideLeft {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
 
 .secure-reliable {
@@ -775,6 +683,17 @@ nav {
 }
 
 /* Hero Layout Fix: Right-align Feature Cards */
+.hero > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 60px 30px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
 .hero > div > div:first-child {
   flex: 1 1 500px;
   min-width: 300px;
@@ -789,13 +708,17 @@ nav {
   min-width: 300px;
 }
 
-/* Logo Marquee */
+/* Marquee Animation */
+@keyframes slideLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 .logo-marquee {
   display: flex;
   gap: 40px;
   animation: slideLeft 20s linear infinite;
   white-space: nowrap;
-  width: fit-content;
 }
 
 .logo-marquee:hover {
@@ -806,12 +729,10 @@ nav {
   transition: transform 0.3s ease;
   height: 50px;
   filter: brightness(0) invert(1);
-  max-width: 100px; /* Added to constrain logos */
 }
 
-#partnerships .logo-marquee {
-  overflow-x: hidden;
-  width: 100%;
+.logo-marquee img:hover {
+  transform: scale(1.1);
 }
 
 @media (max-width: 991px) {
@@ -845,13 +766,12 @@ footer a:hover {
 }
 
 .footer-container {
-  max-width: 100vw; /* Changed from 1200px */
-  margin: 0 auto;
+  max-width: 1200px;
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
-  padding: 0 clamp(10px, 2vw, 20px);
 }
 
 .footer-container div {
@@ -902,65 +822,10 @@ footer a:hover {
 }
 
 .scroll-up {
-  top: 100px;
+  top: 100px; /* Below navbar */
   opacity: 0;
 }
 
 .scroll-up.show {
   opacity: 1;
-}
-
-/* Section Containers */
-#about, #mission-vision, #course-categories, #medical-services, #testimonials, #partnerships {
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-#about > div, #mission-vision > div, #course-categories > div, #medical-services > div, #testimonials > div, #partnerships > div {
-  max-width: 100vw;
-  margin: 0 auto;
-  padding: 0 clamp(10px, 2vw, 20px);
-  box-sizing: border-box;
-}
-
-#heroVideoModal {
-  width: 100vw;
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-#heroVideoModal iframe {
-  max-width: 100%;
-}
-
-#about > div > div:first-child {
-  max-width: 100%;
-  overflow: hidden;
-}
-
-@media (max-width: 480px) {
-  body, nav, main, section, .hero {
-    width: 100vw;
-    max-width: 100vw;
-    overflow-x: hidden;
-  }
-
-  .nav-links {
-    width: 100%;
-  }
-
-  .hero video {
-    width: 100vw;
-    object-fit: cover;
-  }
-
-  .logo-marquee {
-    gap: 20px;
-  }
-
-  .logo-marquee img {
-    height: 40px;
-    max-width: 80px;
-  }
 }
