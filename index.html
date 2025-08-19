@@ -191,11 +191,22 @@
   </div>
 </section>
 
-<!-- Right Form Column -->
+<!-- JK Consultancy Form Section -->
+<section class="form-section" data-aos="fade-up">
+  <div class="form-container">
+    <!-- Left Image Column -->
+    <div class="form-images">
+      <img src="https://images.pexels.com/photos/305568/pexels-photo-305568.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Healthcare Visual" loading="lazy">
+      <img src="https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Education Visual" loading="lazy">
+    </div>
+
+    <!-- Right Form Column -->
     <div class="form-box">
       <h2>Get Free Consultation</h2>
       <p>Fill in the details for your preferred service.</p>
+
       <form id="serviceForm" action="https://jk-consultancy-backend.onrender.com/api/form" method="POST" novalidate>
+        
         <!-- Service Selection -->
         <div class="service-selection">
           <label class="service-label">
@@ -207,37 +218,55 @@
             <span>Health</span>
           </label>
         </div>
+
         <!-- Common Fields -->
         <div class="form-grid">
           <div class="input-group">
             <input type="text" name="name" placeholder="Full Name *" required minlength="2" maxlength="100" pattern="[A-Za-z\s]+" aria-label="Full Name" aria-describedby="name-error">
             <span class="error-message" id="name-error"></span>
           </div>
+    <!-- ✅ Gender Field Added -->
+          <div class="input-group">
+            <select name="gender" required aria-label="Gender" aria-describedby="gender-error">
+              <option value="">Gender *</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+            <span class="error-message" id="gender-error"></span>
+          </div>
+
           <div class="input-group">
             <input type="email" name="email" placeholder="Email *" required aria-label="Email Address" aria-describedby="email-error">
             <span class="error-message" id="email-error"></span>
           </div>
+
           <div class="input-group">
             <input type="tel" name="phone" placeholder="Phone *" required pattern="[0-9]{10,15}" title="Enter a valid phone number (10-15 digits)" aria-label="Phone Number" aria-describedby="phone-error">
             <span class="error-message" id="phone-error"></span>
           </div>
+
           <div class="input-group">
             <input type="text" name="country" placeholder="Country" pattern="[A-Za-z\s]+" aria-label="Country" aria-describedby="country-error">
             <span class="error-message" id="country-error"></span>
           </div>
+
           <div class="input-group">
             <input type="text" name="state" placeholder="State *" required minlength="2" pattern="[A-Za-z\s]+" aria-label="State" aria-describedby="state-error">
             <span class="error-message" id="state-error"></span>
           </div>
+
           <div class="input-group">
             <input type="text" name="city" placeholder="City *" required minlength="2" pattern="[A-Za-z\s]+" aria-label="City" aria-describedby="city-error">
             <span class="error-message" id="city-error"></span>
           </div>
+
           <div class="input-group input-group--full">
             <input type="text" name="address" placeholder="Address *" required minlength="5" maxlength="200" aria-label="Address" aria-describedby="address-error">
             <span class="error-message" id="address-error"></span>
           </div>
         </div>
+
         <!-- Education Fields -->
         <div id="educationFields" class="form-grid form-grid--conditional">
           <div class="input-group">
@@ -253,6 +282,7 @@
             <span class="error-message" id="institution-error"></span>
           </div>
         </div>
+
         <!-- Health Fields -->
         <div id="healthFields" class="form-grid form-grid--conditional" style="display: none;">
           <div class="input-group">
@@ -268,11 +298,13 @@
             <span class="error-message" id="date-error"></span>
           </div>
         </div>
+
         <!-- Additional Info -->
         <div class="input-group input-group--full">
           <textarea name="message" rows="3" placeholder="Additional Info" maxlength="500" aria-label="Additional Information" aria-describedby="message-error"></textarea>
           <span class="error-message" id="message-error"></span>
         </div>
+
         <!-- Submit Button -->
         <button type="submit" aria-label="Submit Consultation Request">
           Submit
@@ -791,5 +823,6 @@
 </script>
 </body>
 </html>
+
 
 
