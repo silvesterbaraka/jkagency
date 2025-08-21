@@ -113,7 +113,14 @@ nav, main, section, .hero {
   margin-bottom: clamp(1.2rem, 2.5vw, 1.8rem);
   line-height: 1.6;
 }
-
+  textarea[name="message"] {
+    width: 100%;        /* make it expand to container width */
+    max-width: 600px;   /* optional: limit width */
+    height: 150px;      /* control height */
+    padding: 10px;      /* more space inside */
+    font-size: 16px;    /* bigger text */
+    border-radius: 8px; /* rounded corners */
+  }
 /* Form Feedback */
 .form-feedback {
   margin-top: clamp(1rem, 2vw, 1.5rem);
@@ -1015,3 +1022,4 @@ footer a:hover {
     max-width: 80px;
   }
 }
+
