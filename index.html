@@ -21,6 +21,7 @@
     <span>JK Consultancy</span>
   </div>
   <div class="nav-links" id="navbar-links">
+    <button class="nav-close" aria-label="Close Navigation Menu"></button>
     <a href="#home" class="nav-link">Home</a>
     <a href="#about" class="nav-link">About Us</a>
     <div class="dropdown">
@@ -39,7 +40,9 @@
     </div>
   </div>
   <button class="menu-toggle" aria-label="Toggle Navigation Menu">
-    <i class="fas fa-bars"></i>
+    <span></span>
+    <span></span>
+    <span></span>
   </button>
 </nav>
   <main>
@@ -101,16 +104,16 @@
     <div style="flex: 1 1 50%; min-width: 320px; display: flex; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.1);" data-aos="fade-right">
       <!-- Left Image with slight blob shape -->
       <div style="flex: 1; clip-path: ellipse(75% 60% at 50% 50%);">
-        <img src="https://media.istockphoto.com/id/1388388697/photo/medical-science-hospital-confident-black-female-neurologist-neuroscientist-neurosurgeon-looks.jpg?s=2048x2048&w=is&k=20&c=M6_rF-22FwmJjziFi-5exfUuUqVd2UOHoWo9wUu8R40=" 
-             alt="Medical Focus" 
+        <img src="https://media.istockphoto.com/id/1388388697/photo/medical-science-hospital-confident-black-female-neurologist-neuroscientist-neurosurgeon-looks.jpg?s=2048x2048&w=is&k=20&c=M6_rF-22FwmJjziFi-5exfUuUqVd2UOHoWo9wUu8R40="
+             alt="Medical Focus"
              style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
       </div>
       <!-- Divider -->
       <div style="width: 3px; background: linear-gradient(to bottom, #0096c7, #003566);"></div>
       <!-- Right Image with a slight diagonal cut -->
       <div style="flex: 1; clip-path: polygonBounce(15% 0%, 100% 10%, 85% 100%, 0% 90%);">
-        <img src="https://cdn.pixabay.com/photo/2017/02/27/23/34/college-2104580_1280.jpg" 
-             alt="Education Focus" 
+        <img src="https://cdn.pixabay.com/photo/2017/02/27/23/34/college-2104580_1280.jpg"
+             alt="Education Focus"
              style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
       </div>
     </div>
@@ -120,7 +123,7 @@
         About JK Consultancy
       </h2>
       <p style="font-size: 17px; line-height: 1.8; color: #222; margin-bottom: 20px;">
-        <strong>JK Consultancy</strong> is a trusted educational and medical consultancy that builds strong bridges between Africa and India. 
+        <strong>JK Consultancy</strong> is a trusted educational and medical consultancy that builds strong bridges between Africa and India.
         Our expertise spans university admissions, healthcare coordination, visa processing, and personalized assistance—ensuring excellence at every step.
       </p>
       <p style="font-size: 16px; line-height: 1.7; color: #333;">
@@ -162,7 +165,6 @@
     </div>
   </div>
 </section>
-
 <!-- Redesigned: Why Choose JK Consultancy -->
 <section style="background: linear-gradient(135deg, #ffffff, #f7f9fb); padding: 100px 20px;" data-aos="fade-up">
   <div style="max-width: 1100px; margin: auto; text-align: center;">
@@ -190,7 +192,6 @@
     </div>
   </div>
 </section>
-
 <!-- JK Consultancy Form Section -->
 <section class="form-section" data-aos="fade-up">
   <div class="form-container">
@@ -199,14 +200,12 @@
       <img src="https://images.pexels.com/photos/305568/pexels-photo-305568.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Healthcare Visual" loading="lazy">
       <img src="https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Education Visual" loading="lazy">
     </div>
-
     <!-- Right Form Column -->
     <div class="form-box">
       <h2>Get Free Consultation</h2>
       <p>Fill in the details for your preferred service.</p>
-
       <form id="serviceForm" action="https://jk-consultancy-backend.onrender.com/api/form" method="POST" novalidate>
-        
+       
         <!-- Service Selection -->
         <div class="service-selection">
           <label class="service-label">
@@ -218,7 +217,6 @@
             <span>Health</span>
           </label>
         </div>
-
         <!-- Common Fields -->
         <div class="form-grid">
           <div class="input-group">
@@ -235,38 +233,31 @@
             </select>
             <span class="error-message" id="gender-error"></span>
           </div>
-
           <div class="input-group">
             <input type="email" name="email" placeholder="Email *" required aria-label="Email Address" aria-describedby="email-error">
             <span class="error-message" id="email-error"></span>
           </div>
-
           <div class="input-group">
             <input type="tel" name="phone" placeholder="Phone *" required pattern="[0-9]{10,15}" title="Enter a valid phone number (10-15 digits)" aria-label="Phone Number" aria-describedby="phone-error">
             <span class="error-message" id="phone-error"></span>
           </div>
-
           <div class="input-group">
             <input type="text" name="country" placeholder="Country" pattern="[A-Za-z\s]+" aria-label="Country" aria-describedby="country-error">
             <span class="error-message" id="country-error"></span>
           </div>
-
           <div class="input-group">
             <input type="text" name="state" placeholder="State *" required minlength="2" pattern="[A-Za-z\s]+" aria-label="State" aria-describedby="state-error">
             <span class="error-message" id="state-error"></span>
           </div>
-
           <div class="input-group">
             <input type="text" name="city" placeholder="City *" required minlength="2" pattern="[A-Za-z\s]+" aria-label="City" aria-describedby="city-error">
             <span class="error-message" id="city-error"></span>
           </div>
-
           <div class="input-group input-group--full">
             <input type="text" name="address" placeholder="Address *" required minlength="5" maxlength="200" aria-label="Address" aria-describedby="address-error">
             <span class="error-message" id="address-error"></span>
           </div>
         </div>
-
         <!-- Education Fields -->
         <div id="educationFields" class="form-grid form-grid--conditional">
           <div class="input-group">
@@ -282,7 +273,6 @@
             <span class="error-message" id="institution-error"></span>
           </div>
         </div>
-
         <!-- Health Fields -->
         <div id="healthFields" class="form-grid form-grid--conditional" style="display: none;">
           <div class="input-group">
@@ -298,13 +288,11 @@
             <span class="error-message" id="date-error"></span>
           </div>
         </div>
-
         <!-- Additional Info -->
         <div class="input-group input-group--full">
           <textarea name="message" rows="3" placeholder="Additional Info" maxlength="500" aria-label="Additional Information" aria-describedby="message-error"></textarea>
           <span class="error-message" id="message-error"></span>
         </div>
-
         <!-- Submit Button -->
         <button type="submit" aria-label="Submit Consultation Request">
           Submit
@@ -314,7 +302,6 @@
     </div>
   </div>
 </section>
-
 <!-- Redesigned: Popular Course Categories Section (Google Style) -->
 <section style="background: rgba(249, 250, 251, 0.6); padding: 100px 20px; text-align: center; backdrop-filter: blur(3px);" id="course-categories" data-aos="fade-up">
   <div style="max-width: 1200px; margin: auto;">
@@ -337,7 +324,7 @@
       <span style="display: flex; align-items: center; gap: 12px; background: white; padding: 14px 26px; border-radius: 50px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); font-weight: 500; font-size: 15px; cursor: pointer;">
         🔬 Applied Sciences
       </span>
-      <span style="display: flex; align-items: center; gap: 12px; background: white; padding: 14px 26px; border-radius: 50px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); font-weight: 500; font-size: 15px; cursor: pointer;">
+      <span style="display: taka flex; align-items: center; gap: 12px; background: white; padding: 14px 26px; border-radius: 50px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); font-weight: 500; font-size: 15px; cursor: pointer;">
         🏨 Hospitality & Tourism
       </span>
       <span style="display: flex; align-items: center; gap: 12px; background: white; padding: 14px 26px; border-radius: 50px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); font-weight: 500; font-size: 15px; cursor: pointer;">
@@ -375,7 +362,6 @@
     </div>
   </div>
 </section>
-
 <!-- Medical Services Highlights Section -->
 <section id="medical-services" data-aos="fade-up" style="background: rgba(255, 255, 255, 0.8); padding: 80px 20px;">
   <div style="max-width: 1100px; margin: auto;">
@@ -385,7 +371,7 @@
         We offer a wide range of professional medical services in India to address diverse client health needs.
       </p>
     </div>
-    <div style="display: geometric; flex-wrap: wrap; justify-content: center; gap: 30px;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
       <div data-aos="fade-right" style="flex: 1 1 300px; background: #ffffff; border-radius: 16px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center;">
         <img src="https://cdn-icons-png.flaticon.com/512/2910/2910791.png" alt="Specialist Icon" style="width: 50px; height: 50px; margin-bottom: 15px;" loading="lazy">
         <span style="font-size: 24px; color: #00bfa6; font-weight: 700;">01</span>
@@ -413,7 +399,6 @@
     </div>
   </div>
 </section>
-
 <section id="testimonials" style="background: linear-gradient(135deg, #f7f9fb, #ffffff); padding: 80px 20px; text-align: center;" data-aos="fade-up">
   <div style="max-width: 1100px; margin: auto;">
     <h2 style="font-size: 34px; color: #003566; font-weight: 700; margin-bottom: 20px;">What Our Clients Say</h2>
@@ -446,7 +431,6 @@
     </div>
   </div>
 </section>
-
 <!-- Enhanced Strategic Partnerships Section -->
 <section class="section" id="partnerships" data-aos="fade-up" style="padding: 80px 20px; background: rgba(0, 0, 0, 0.7); text-align: center; color: #f5f5f5; backdrop-filter: blur(6px);">
   <div style="max-width: 1100px; margin: auto;">
@@ -473,7 +457,7 @@
         <!-- Duplicate logos for seamless loop -->
         <a href="https://manipal.edu" target="_blank"><img src="https://seeklogo.com/images/M/manipal-university-logo-0C9A7E4C1D-seeklogo.com.png" alt="Manipal University Partnership Logo"></a>
         <a href="https://www.amrita.edu" target="_blank"><img src="https://www.pngitem.com/pimgs/m/301-3017267_amrita-university-logo-hd-png-download.png" alt="Amrita University Partnership Logo"></a>
-        <a href="https://www.jssuni.edu.in" target="_blank"><img src="https://www.jssuni.edu.in/images/jss-logo.png" alt="JSS Academy Partnership rightfully Logo"></a>
+        <a href="https://www.jssuni.edu.in" target="_blank"><img src="https://www.jssuni.edu.in/images/jss-logo.png" alt="JSS Academy Partnership Logo"></a>
         <a href="https://www.srmist.edu.in" target="_blank"><img src="https://seeklogo.com/images/S/srm-university-logo-4B9A0E1F9D-seeklogo.com.png" alt="SRM University Partnership Logo"></a>
         <a href="https://www.aiims.edu" target="_blank"><img src="https://asset.brandfetch.io/idY1cV6-9P/idvP9HtwT9.png" alt="AIIMS New Delhi Partnership Logo"></a>
         <a href="https://www.cmch-vellore.edu" target="_blank"><img src="https://www.cmch-vellore.edu/wp-content/uploads/2018/07/CMC-Logo.png" alt="CMC Vellore Partnership Logo"></a>
@@ -482,7 +466,6 @@
     </div>
   </div>
 </section>
-
     <a href="https://wa.me/91762800724" target="_blank" class="whatsapp-float">
       <i class="fa-brands fa-whatsapp"></i>
     </a>
@@ -530,301 +513,6 @@
   <div class="scroll-down"><i class="fas fa-arrow-down"></i></div>
   <div class="scroll-up"><i class="fas fa-arrow-up"></i></div>
  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  // Initialize AOS (Unchanged)
-  AOS.init({ duration: 1000, once: true });
-
-  document.addEventListener('DOMContentLoaded', function () {
-    // Hamburger menu toggle (Unchanged)
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const dropdown = document.querySelector('.dropdown');
-    const dropbtn = document.querySelector('.dropbtn');
-
-    if (menuToggle && navLinks) {
-      menuToggle.addEventListener('click', function () {
-        navLinks.classList.toggle('show');
-      });
-    }
-
-    if (dropbtn && dropdown) {
-      // Dropdown toggle for mobile (Unchanged)
-      dropbtn.addEventListener('click', function (e) {
-        if (window.innerWidth <= 900) {
-          e.preventDefault();
-          dropdown.classList.toggle('open');
-        }
-      });
-
-      // Close dropdown if clicked outside (Unchanged)
-      document.addEventListener('click', function (e) {
-        if (!e.target.closest('.dropdown')) {
-          dropdown.classList.remove('open');
-        }
-      });
-
-      // Hover behavior for desktop (Unchanged)
-      dropdown.addEventListener('mouseenter', function () {
-        if (window.innerWidth > 900) dropdown.classList.add('open');
-      });
-
-      dropdown.addEventListener('mouseleave', function () {
-        if (window.innerWidth > 900) dropdown.classList.remove('open');
-      });
-    }
-
-    // Enhanced Service Field Toggle
-    function toggleServiceFields() {
-      const service = document.querySelector('input[name="serviceType"]:checked')?.value;
-      const educationFields = document.getElementById('educationFields');
-      const healthFields = document.getElementById('healthFields');
-
-      if (!educationFields || !healthFields) return;
-
-      // Smooth transition for field visibility
-      educationFields.classList.toggle('active', service === 'Education');
-      healthFields.classList.toggle('active', service === 'Health');
-
-      // Reset fields in the hidden section
-      const fieldsToReset = service === 'Education' ? healthFields.querySelectorAll('input') : educationFields.querySelectorAll('input');
-      fieldsToReset.forEach(field => {
-        field.value = '';
-        const errorMessage = field.nextElementSibling;
-        if (errorMessage) {
-          errorMessage.textContent = '';
-          errorMessage.classList.remove('active');
-          field.classList.remove('error');
-        }
-      });
-
-      validateForm(); // Update submit button state
-    }
-
-    // Validation rules
-    const validationRules = {
-      name: {
-        regex: /^[A-Za-z\s]{2,100}$/,
-        error: 'Name must be 2-100 characters, letters and spaces only'
-      },
-      email: {
-        regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-        error: 'Please enter a valid email address'
-      },
-      phone: {
-        regex: /^[0-9]{10,15}$/,
-        error: 'Phone must be 10-15 digits'
-      },
-      country: {
-        regex: /^[A-Za-z\s]{0,50}$/,
-        error: 'Country must be letters and spaces only (max 50 characters)'
-      },
-      state: {
-        regex: /^[A-Za-z\s]{2,50}$/,
-        error: 'State must be 2-50 characters, letters and spaces only'
-      },
-      city: {
-        regex: /^[A-Za-z\s]{2,50}$/,
-        error: 'City must be 2-50 characters, letters and spaces only'
-      },
-      address: {
-        regex: /^.{5,200}$/,
-        error: 'Address must be 5-200 characters'
-      },
-      desiredCourse: {
-        regex: /^[A-Za-z0-9\s]{0,100}$/,
-        error: 'Course must be letters, numbers, and spaces only (max 100 characters)'
-      },
-      qualification: {
-        regex: /^[A-Za-z0-9\s]{0,100}$/,
-        error: 'Qualification must be letters, numbers, and spaces only (max 100 characters)'
-      },
-      institution: {
-        regex: /^[A-Za-z0-9\s]{0,100}$/,
-        error: 'Institution must be letters, numbers, and spaces only (max 100 characters)'
-      },
-      healthConcern: {
-        regex: /^[A-Za-z0-9\s]{0,100}$/,
-        error: 'Health concern must be letters, numbers, and spaces only (max 100 characters)'
-      },
-      preferredHospital: {
-        regex: /^[A-Za-z0-9\s]{0,100}$/,
-        error: 'Hospital must be letters, numbers, and spaces only (max 100 characters)'
-      },
-      preferredDate: {
-        validate: (value) => {
-          if (!value) return true; // Optional field
-          const today = new Date('2025-08-15');
-          const inputDate = new Date(value);
-          return inputDate >= today;
-        },
-        error: 'Date must be today or later'
-      },
-      message: {
-        regex: /^.{0,500}$/,
-        error: 'Message must be 500 characters or less'
-      }
-    };
-
-    // Validate single field
-    function validateField(input) {
-      const fieldName = input.name;
-      const value = input.value.trim();
-      const errorMessage = input.nextElementSibling;
-      const rule = validationRules[fieldName];
-
-      if (!rule) return true; // No validation rule for this field
-
-      // Check required fields
-      if (input.required && !value) {
-        errorMessage.textContent = `${input.placeholder} is required`;
-        errorMessage.classList.add('active');
-        input.classList.add('error');
-        return false;
-      }
-
-      // Apply regex or custom validation
-      if (rule.regex && value && !rule.regex.test(value)) {
-        errorMessage.textContent = rule.error;
-        errorMessage.classList.add('active');
-        input.classList.add('error');
-        return false;
-      } else if (rule.validate && value && !rule.validate(value)) {
-        errorMessage.textContent = rule.error;
-        errorMessage.classList.add('active');
-        input.classList.add('error');
-        return false;
-      }
-
-      // Clear error
-      errorMessage.textContent = '';
-      errorMessage.classList.remove('active');
-      input.classList.remove('error');
-      return true;
-    }
-
-    // Validate entire form
-    function validateForm() {
-      const inputs = document.getElementById('serviceForm').querySelectorAll('input, textarea');
-      let valid = true;
-
-      inputs.forEach(input => {
-        if (input.required || input.value.trim()) {
-          if (!validateField(input)) {
-            valid = false;
-          }
-        }
-      });
-
-      const submitButton = document.querySelector('button[type="submit"]');
-      submitButton.disabled = !valid;
-      return valid;
-    }
-
-    // Run toggle on load
-    toggleServiceFields();
-
-    // Re-run on radio change with keyboard support
-    document.querySelectorAll('input[name="serviceType"]').forEach(radio => {
-      radio.addEventListener('change', toggleServiceFields);
-      radio.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-          radio.checked = true;
-          toggleServiceFields();
-        }
-      });
-    });
-
-    // Real-time validation on input and blur
-    document.getElementById('serviceForm').querySelectorAll('input, textarea').forEach(input => {
-      input.addEventListener('input', () => {
-        validateField(input);
-        validateForm();
-      });
-      input.addEventListener('blur', () => {
-        validateField(input);
-        validateForm();
-      });
-    });
-
-    // Enhanced Form Submission
-    const submitButton = document.querySelector('button[type="submit"]');
-    document.getElementById('serviceForm').addEventListener('submit', async function (e) {
-      e.preventDefault();
-      if (!validateForm()) {
-        const firstError = document.querySelector('.error');
-        if (firstError) {
-          firstError.focus();
-          firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-        return;
-      }
-
-      const form = e.target;
-      const formData = new FormData(form);
-      submitButton.innerHTML = 'Submitting... <span class="button-icon"><i class="fas fa-spinner fa-spin"></i></span>';
-      submitButton.disabled = true;
-
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: formData
-        });
-        if (response.ok) {
-          const feedback = document.createElement('div');
-          feedback.className = 'form-feedback success';
-          feedback.setAttribute('role', 'alert');
-          feedback.textContent = 'Thank you for your inquiry! We will get back to you soon.';
-          form.parentNode.appendChild(feedback);
-          form.reset();
-          toggleServiceFields();
-          setTimeout(() => feedback.remove(), 5000);
-        } else {
-          const feedback = document.createElement('div');
-          feedback.className = 'form-feedback error';
-          feedback.setAttribute('role', 'alert');
-          feedback.textContent = 'There was an issue submitting your form. Please try again.';
-          form.parentNode.appendChild(feedback);
-          setTimeout(() => feedback.remove(), 5000);
-        }
-      } catch (error) {
-        const feedback = document.createElement('div');
-        feedback.className = 'form-feedback error';
-        feedback.setAttribute('role', 'alert');
-        feedback.textContent = 'Error: Could not connect to the server.';
-        form.parentNode.appendChild(feedback);
-        setTimeout(() => feedback.remove(), 5000);
-      } finally {
-        submitButton.innerHTML = 'Submit <span class="button-icon"><i class="fas fa-arrow-right"></i></span>';
-        submitButton.disabled = false;
-        validateForm();
-      }
-    });
-
-    // Scroll arrows functionality (Unchanged)
-    const scrollDown = document.querySelector('.scroll-down');
-    const scrollUp = document.querySelector('.scroll-up');
-
-    scrollDown.addEventListener('click', () => {
-      window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
-    });
-
-    scrollUp.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
-        scrollUp.classList.add('show');
-      } else {
-        scrollUp.classList.remove('show');
-      }
-    });
-  });
-</script>
+ <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
