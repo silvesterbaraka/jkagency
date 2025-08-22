@@ -847,10 +847,10 @@ nav {
 .nav-close {
   display: none;
   position: absolute;
-  top: clamp(20px, 4vw, 24px);
-  right: clamp(20px, 4vw, 24px);
+  top: clamp(12px, 2.5vw, 16px); /* Positioned at top-right for better visibility */
+  right: clamp(12px, 2.5vw, 16px);
   background: rgba(255, 255, 255, 0.9);
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.2); /* Added border for contrast */
   width: clamp(40px, 5.5vw, 44px);
   height: clamp(40px, 5.5vw, 44px);
   border-radius: 8px;
@@ -858,10 +858,11 @@ nav {
   z-index: 1003;
   transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
   font-size: clamp(1.2rem, 2.5vw, 1.4rem);
-  font-weight: 700;
-  color: #000;
+  font-weight: 800; /* Bolder text for visibility */
+  color: #000; /* Black "X" */
   line-height: 1;
   text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow for prominence */
 }
 
 .nav-close::before {
@@ -876,7 +877,7 @@ nav {
 .nav-close:hover {
   transform: scale(1.1);
   background: rgba(255, 255, 255, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
 .nav-close:active {
@@ -912,6 +913,7 @@ nav {
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.4s ease;
     opacity: 0;
     box-shadow: -8px 0 16px rgba(0, 0, 0, 0.3);
+    border-radius: clamp(8px, 2vw, 12px); /* Added slight rounded corners */
   }
 
   .nav-links.show {
@@ -1022,6 +1024,7 @@ nav {
     max-width: clamp(240px, 60vw, 300px);
     height: calc(75vh - clamp(80px, 10vw, 100px)); /* Increased to accommodate all content */
     padding: clamp(14px, 2.5vw, 18px);
+    border-radius: clamp(8px, 2vw, 12px); /* Added slight rounded corners */
   }
 
   .dropdown-content {
@@ -1089,6 +1092,7 @@ nav {
     display: none;
     flex-direction: column;
     align-items: flex-start;
+    border-radius: clamp(8px, 2vw, 12px); /* Added slight rounded corners */
   }
 
   .nav-links.show {
@@ -1612,6 +1616,10 @@ footer a:hover {
 
   .nav-close {
     font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  }
+
+  .form-section {
+    padding: clamp(16px, 4vw, 24px) clamp(6px, 1.5vw, 10px);
   }
 
   .form-section {
